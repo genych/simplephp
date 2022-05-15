@@ -18,7 +18,8 @@ why:
 keep my knowledge/preferences in one public place
 
 todo:
-actual symfony app
+actual symfony app on top of skeleton
+php image with composer and tools preinstalled
 CI
 tweak configs
 more todos
