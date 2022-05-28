@@ -1,11 +1,6 @@
 version: '3.9'
 
 services:
-  red:
-    image: redis:7.0.0-alpine
-    ports:
-      - "6379:6379"
-
   db:
     image: postgres:14-alpine
     ports:
@@ -15,11 +10,14 @@ services:
       POSTGRES_USER: guest
 
   php:
-    image: php:8.1-fpm-alpine
+    build:
+      context: .docker
+      dockerfile: php.Dockerfile
     ports:
       - "9000"
     volumes:
       - .:/demo
+    working_dir: /demo
 
   nginx:
     build:
