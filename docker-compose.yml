@@ -18,6 +18,8 @@ services:
     volumes:
       - .:/demo
     working_dir: /demo
+    command: >
+      sh -c "php composer install && bin/console do:da:cre && bin/console do:mi:mi && php-fpm"
 
   nginx:
     build:
