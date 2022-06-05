@@ -16,7 +16,7 @@ class RestController extends AbstractController
         return $this->json($service->list());
     }
 
-    #[Route(path: '/push/{number}', methods: ['GET'])]
+    #[Route(path: '/push/{number}', methods: ['POST'])]
     public function push(
         float $number,
         StackService $service
