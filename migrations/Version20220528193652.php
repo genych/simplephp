@@ -19,14 +19,11 @@ final class Version20220528193652 extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE SEQUENCE stack_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
-        $this->addSql('CREATE TABLE stack (id INT NOT NULL, number DOUBLE PRECISION NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE IF NOT EXISTS stack (id SERIAL PRIMARY KEY, number DOUBLE PRECISION NOT NULL)');
     }
 
     public function down(Schema $schema): void
     {
-        $this->addSql('DROP SEQUENCE stack_id_seq CASCADE');
         $this->addSql('DROP TABLE stack');
     }
 }
