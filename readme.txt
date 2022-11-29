@@ -18,9 +18,9 @@ why:
 keep my knowledge/preferences in one public place
 
 todo:
-xdebug
+~xdebug~
 redis
-php image with composer and tools preinstalled
+~php image with composer and tools preinstalled~
 CI
 tweak configs
 more todos
